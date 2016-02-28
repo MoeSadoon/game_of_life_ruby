@@ -33,11 +33,19 @@ describe 'conway' do
     expect(cell.neighbours.count).to eq 1
   end
 
-  it 'cell should die if less than two neighbours because of underpopulation' do
+  it 'cells with less than two neighbours because of underpopulation' do
     cell2 = Cell.new(grid,2,3)
     cell.end_round
     expect(cell.alive).to be false
     expect(grid.cells).not_to include(cell)
+  end
+
+  it 'cells with two or more neighbours live onto next round' do
+    cell2 = Cell.new(grid,2,3)
+    cell3 = Cell.new(grid,3,3)
+    cell.end_round
+    expect(cell.alive).to be true
+    expect(grid.cells).to include(cell)
   end
 
 

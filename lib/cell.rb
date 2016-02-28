@@ -37,7 +37,6 @@ class Cell
       end
     end
 
-
     return @neighbours
   end
 
