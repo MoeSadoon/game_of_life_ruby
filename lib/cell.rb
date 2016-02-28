@@ -27,16 +27,20 @@ class Cell
   def neighbours
     @neighbours = []
     @grid.cells.each do |cell|
-      #if neighbour is directly north to cell
+      #if neighbour is directly north of cell
       if self.x == cell.x && self.y == cell.y-1
         @neighbours << cell
       end
-      #if neighbour is directly north-east to cell
+      #if neighbour is directly north-east of cell
       if self.x == cell.x-1 && self.y == cell.y-1
         @neighbours << cell
       end
-      #if neighbour is directly east to cell
+      #if neighbour is directly east of cell
       if self.x == cell.x-1 && self.y == cell.y
+        @neighbours << cell
+      end
+      #if neighbour is directly south of cell
+      if self.x == cell.x && self.y == cell.y+1
         @neighbours << cell
       end
     end
