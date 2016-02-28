@@ -17,7 +17,14 @@ class Cell
   end
 
   def neighbours
-
+    @neighbours = []
+    #if neighbour is directly north to cell
+    @grid.cells.each do |cell|
+      if self.x == cell.x && self.y == cell.y-1
+        @neighbours << cell
+      end
+    end
+    return @neighbours
   end
 
 end
