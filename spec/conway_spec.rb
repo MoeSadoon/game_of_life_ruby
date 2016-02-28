@@ -7,6 +7,12 @@ describe 'conway' do
     expect(cell.alive).to be true
   end
 
+  it 'cell can be killed' do
+    cell = Cell.new
+    cell.kill
+    expect(cell.alive).to be false
+  end
+
 
 
 
