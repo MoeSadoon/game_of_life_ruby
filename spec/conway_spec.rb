@@ -58,9 +58,15 @@ describe 'conway' do
     expect(grid.cells).to include(cell)
   end
 
-  # it 'cells with more than three neighbours dies of overcrowding' do
-  #
-  # end
+  it 'cells with more than three neighbours dies of overcrowding' do
+    cell2 = Cell.new(grid,2,3)
+    cell3 = Cell.new(grid,3,3)
+    cell2 = Cell.new(grid,3,2)
+    cell3 = Cell.new(grid,2,1)
+    cell.end_round
+    expect(cell.alive).to be false
+    expect(grid.cells).not_to include(cell)
+  end
 
 
 end

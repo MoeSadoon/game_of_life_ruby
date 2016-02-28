@@ -13,7 +13,7 @@ class Cell
   end
 
   def end_round
-    if self.neighbours.count < 2
+    if self.neighbours.count < 2 || self.neighbours.count > 3
       self.kill
       @grid.cells.delete(self)
     end
