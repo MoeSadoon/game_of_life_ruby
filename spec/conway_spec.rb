@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe 'conway' do
-  let(:cell) {Cell.new }
+  let(:grid) { Grid.new }
+  let(:cell) { Cell.new(grid) }
 
   it 'cell can be made alive' do
     expect(cell.alive).to be true
@@ -16,6 +17,16 @@ describe 'conway' do
     expect(cell.x).to be 2
     expect(cell.y).to be 2
   end
+
+
+  it 'grid should include new cells' do
+    expect(grid.cells).to include(cell)
+  end
+
+  # it 'cell should detect a neighbour to the north of it' do
+  #   cell2 = Cell.new(2,3)
+  #   expect(cell.neighbours.count).to eq 1
+  # end
 
   # it 'cell can be killed when it has fewer than 2 neighbours' do
   #
