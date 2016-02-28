@@ -33,6 +33,11 @@ describe 'conway' do
     expect(cell.neighbours.count).to eq 1
   end
 
+  it 'cell should detect a neighbour to the east of it' do
+    cell2 = Cell.new(grid,3,2)
+    expect(cell.neighbours.count).to eq 1
+  end
+
   it 'cells with less than two neighbours because of underpopulation' do
     cell2 = Cell.new(grid,2,3)
     cell.end_round
@@ -47,6 +52,10 @@ describe 'conway' do
     expect(cell.alive).to be true
     expect(grid.cells).to include(cell)
   end
+
+  # it 'cells with more than three neighbours dies of overcrowding' do
+  #
+  # end
 
 
 end

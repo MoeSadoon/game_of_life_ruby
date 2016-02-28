@@ -35,6 +35,10 @@ class Cell
       if self.x == cell.x-1 && self.y == cell.y-1
         @neighbours << cell
       end
+      #if neighbour is directly east to cell
+      if self.x == cell.x-1 && self.y == cell.y
+        @neighbours << cell
+      end
     end
 
     return @neighbours
