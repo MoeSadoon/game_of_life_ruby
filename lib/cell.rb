@@ -12,6 +12,14 @@ class Cell
     @grid.cells << self
   end
 
+  def end_round
+    if self.neighbours.count < 2
+      self.kill
+      @grid.cells.delete(self)
+    end
+
+  end
+
   def kill
     @alive = false
   end
