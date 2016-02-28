@@ -12,6 +12,15 @@ describe 'conway' do
     expect(cell.alive).to be false
   end
 
+  it 'can spawn at a given position' do
+    expect(cell.x).to be 2
+    expect(cell.y).to be 2
+  end
+
+  # it 'cell can be killed when it has fewer than 2 neighbours' do
+  #
+  # end
+
 
 
 
