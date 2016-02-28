@@ -28,9 +28,10 @@ describe 'conway' do
     expect(cell.neighbours.count).to eq 1
   end
 
-  # it 'cell can be killed when it has fewer than 2 neighbours' do
-  #
-  # end
+  it 'cell should detect a neighbour to the northeast of it' do
+    cell2 = Cell.new(grid,3,3)
+    expect(cell.neighbours.count).to eq 1
+  end
 
 
 
