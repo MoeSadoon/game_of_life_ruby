@@ -13,7 +13,7 @@ describe 'conway' do
     expect(cell.alive).to be false
   end
 
-  it 'can spawn at a given position' do
+  it 'cell can spawn at a given position' do
     expect(cell.x).to be 2
     expect(cell.y).to be 2
   end
@@ -43,14 +43,14 @@ describe 'conway' do
     expect(cell.neighbours.count).to eq 1
   end
 
-  it 'cells with less than two neighbours because of underpopulation' do
+  it 'cell with less than two neighbours dies because of underpopulation' do
     cell2 = Cell.new(grid,2,3)
     cell.end_round
     expect(cell.alive).to be false
     expect(grid.cells).not_to include(cell)
   end
 
-  it 'cells with two or more neighbours live onto next round' do
+  it 'cell with two or more neighbours lives onto next round' do
     cell2 = Cell.new(grid,2,3)
     cell3 = Cell.new(grid,3,3)
     cell.end_round
@@ -58,7 +58,7 @@ describe 'conway' do
     expect(grid.cells).to include(cell)
   end
 
-  it 'cells with more than three neighbours dies of overcrowding' do
+  it 'cell with more than three neighbours dies of overcrowding' do
     cell2 = Cell.new(grid,2,3)
     cell3 = Cell.new(grid,3,3)
     cell2 = Cell.new(grid,3,2)
